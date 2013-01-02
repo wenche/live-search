@@ -13,8 +13,8 @@ buster.testCase("Throttler", {
 		refute.called(this.callback);
 	},
 	"calls callback after 100ms" : function () {
-		this.throttler.queue("R"),
-		this.clock.tick(100);
+		this.throttler.queue("R");
+		this.clock.tick(150);
 
 		assert.calledOnce(this.callback);
 	},
@@ -22,7 +22,7 @@ buster.testCase("Throttler", {
 		this.throttler.queue("R");
 		this.clock.tick(50);
 		this.throttler.queue("Ro");
-		this.clock.tick(100);
+		this.clock.tick(150);
 
 		assert.calledOnce(this.callback);
 		assert.calledWith(this.callback, "Ro");
