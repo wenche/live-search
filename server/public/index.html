@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search</title>
+    <link type="text/css" rel="stylesheet" href="live-search.css" media="all">
+  </head>
+  <body>
+    <div class="container">
+      <form action="/search" method="get">
+        <fieldset>
+          <input type="search" class="text" name="q" autocomplete="off">
+          <div class="button"><input type="submit" value="Search"></div>
+        </fieldset>
+      </form>
+    </div>
+    <script type="text/javascript" src="live-search.js"></script>
+    <script type="text/javascript">
+      jQuery("form").liveSearch();
+    </script>
+  </body>
+</html>
